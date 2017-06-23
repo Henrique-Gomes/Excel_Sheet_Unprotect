@@ -71,8 +71,9 @@ begin
     unprotectSheet(VWS)
   else writeln(#13#10'Sheet is not locked.');
 
-  // Uncomment line bellow to save the file unprotected
-  //VWB.SaveAs (dialog.filename, $00000027 {xlExcel7 = $00000027; on Excel.pas Unit}, vip, vip, false, false, $00000001 {xlNoChange = $00000001; on Excel_TLB.pas Unit}, false, false, vip, vip, vip, 0);
+  // Uncomment one of the lines bellow if you want to save the unprotected file
+  //VWB.Workbooks[1].Save;
+  //VWB.Workbooks[1].SaveAs (dialog.filename+' new', $00000027 {xlExcel7 = $00000027; on Excel.pas Unit}, vip, vip, false, false, $00000001 {xlNoChange = $00000001; on Excel_TLB.pas Unit}, false, false, vip, vip, vip, 0);
 
   // Closing Excel...
   VWS := Unassigned;  
